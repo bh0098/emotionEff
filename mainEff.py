@@ -20,7 +20,7 @@ cut_size = 44
 epoch = 10
 bs = 4
 lr = 0.0001
-shape = (224, 224)
+shape = (112, 112)
 num_classes = 7
 
 transform_train = transforms.Compose([

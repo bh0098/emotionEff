@@ -17,7 +17,7 @@ model.load_state_dict(torch.load(model_path))
 
 
 
-shape = (224, 224)
+shape = (112, 112)
 data_transforms = transforms.Compose([
         transforms.Grayscale(3),
         transforms.Resize(shape),
