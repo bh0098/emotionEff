@@ -26,16 +26,16 @@ data_transforms = transforms.Compose([
 print("Using {} device".format(device))
 
 
-'''enter image path'''
-img = Image.open('./data/total/test/fear/PrivateTest_85557728.jpg')
-img = data_transforms(img)
+'''enter data set path'''
+datasest_path = 'data/total/test'
+testset = datasets.ImageFolder(datasest_path, transform=data_transforms)
+testloader = torch.utils.data.DataLoader(testset, batch_size=bs)
+# img = Image.open('./data/total/test/fear/PrivateTest_85557728.jpg')
+# img = data_transforms(img)
 
 '''in the eval mode dropout layeres are freeze'''
 model.eval()
-testset = datasets.ImageFolder('data/total/test', transform=data_transforms)
-# # testset2 = torch.utils.data.Subset(testset,torch.randperm(len(testset))[:100] )
-# testset2 = torch.utils.data.Subset(test_data, torch.randperm(len(test_data))[:100])
-testloader = torch.utils.data.DataLoader(testset, batch_size=bs)
+
 
 '''you can enter class names automaticly by loading dataset'''
 class_names = ['angry','disgust','fear','happy','neutral','sad','surprise']
